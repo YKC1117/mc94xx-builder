@@ -6,34 +6,381 @@
 <meta name="theme-color" content="#101827">
 <title>Zebra MC9400 / MC9450 規格選型參考</title>
 <style>
-:root{--bg:#f4f6f9;--card:#fff;--ink:#142033;--muted:#667085;--line:#d9e0e8;--nav:#101827;--nav2:#1e293b;--accent:#1565d8;--accent2:#0d4fae;--soft:#edf5ff;--good:#137a4f;--goodbg:#eaf8f1;--warn:#8a5b00;--warnbg:#fff7df;--bad:#b42318;--badbg:#fff0ee;--shadow:0 10px 28px rgba(15,23,42,.07);--radius:16px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",Arial,sans-serif;line-height:1.5}a{color:var(--accent)}button,input{font:inherit}.wrap{max-width:1180px;margin:auto}.top{background:linear-gradient(135deg,var(--nav),#183458);color:#fff;padding:28px 18px 24px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.12em;color:#9bc3ff}.top h1{margin:5px 0 8px;font-size:clamp(28px,5vw,42px);line-height:1.12;letter-spacing:-.03em}.top p{margin:0;max-width:850px;color:#d5deea;font-size:14px}.notice-top{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}.badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:850;background:#213f66;border:1px solid #3b628f}.source-top{margin-top:9px;font-size:11px;color:#b9c9dc;word-break:break-all}.source-top a{color:#dce9ff}.content{padding:18px 14px 44px}.structure{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:16px}.structure h2{font-size:18px;margin:0 0 5px}.structure p{margin:0;color:var(--muted);font-size:12.5px}.code-strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;align-items:center}.seg{border:1px solid var(--line);background:#fbfcfe;border-radius:9px;padding:7px 9px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:800}.seg small{display:block;font-family:inherit;font-size:9.5px;font-weight:600;color:var(--muted);margin-top:2px}.dash{color:#98a2b3;font-weight:900}.layout{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(340px,.7fr);gap:16px;align-items:start}@media(max-width:940px){.layout{grid-template-columns:1fr}.result{position:static!important}}.builder{display:flex;flex-direction:column;gap:13px}.group{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}.group-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px}.num{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--soft);color:var(--accent);font-size:12px;font-weight:900}.group h2{font-size:17px;margin:0}.group .en{font-size:11.5px;color:var(--muted);font-weight:650;margin-left:5px}.group-note{font-size:12.5px;color:var(--muted);margin-top:2px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.options.three{grid-template-columns:repeat(3,minmax(0,1fr))}.options.four{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:640px){.options,.options.three,.options.four{grid-template-columns:1fr}}.option{position:relative}.option input{position:absolute;opacity:0;pointer-events:none}.option label{display:block;height:100%;min-height:86px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px;cursor:pointer;transition:.14s}.option label:hover{border-color:#9bb8dc;background:#fcfdff}.option input:checked+label{border:2px solid var(--accent);padding:10px 11px;background:var(--soft)}.option input:disabled+label{opacity:.5;cursor:not-allowed;background:#f8fafc}.option-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.code{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:24px;padding:0 6px;border-radius:6px;background:#eef2f6;color:#334155;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:900}.option input:checked+label .code{background:var(--accent);color:#fff}.option strong{font-size:14px}.tag{display:inline-flex;border-radius:999px;padding:2px 6px;font-size:9.5px;font-weight:850}.tag.good{background:var(--goodbg);color:var(--good)}.tag.warn{background:var(--warnbg);color:var(--warn)}.tag.bad{background:var(--badbg);color:var(--bad)}.option small{display:block;color:var(--muted);font-size:11.8px;line-height:1.45;margin-top:5px}.fixed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}@media(max-width:720px){.fixed-grid{grid-template-columns:1fr}}.fixed{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fafcff}.fixed b{display:block;font-size:13px}.fixed span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}.result{position:sticky;top:12px}.result-card{background:linear-gradient(150deg,#0c1424,#193354);color:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow)}.result-label{font-size:10.5px;font-weight:850;letter-spacing:.1em;color:#a7b7ca;text-transform:uppercase}.result-model{font-size:30px;font-weight:900;line-height:1.1;margin:5px 0 2px}.result-sub{font-size:12.5px;color:#cbd7e7}.sku-box{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.16)}.sku{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:20px;font-weight:850;word-break:break-all;margin:5px 0}.sku-status{font-size:11.5px;color:#c7d4e4}.result-rows{display:grid;gap:7px;margin-top:14px}.result-row{display:flex;justify-content:space-between;gap:12px;border-top:1px dashed rgba(255,255,255,.16);padding-top:7px;font-size:12.5px}.result-row:first-child{border-top:0;padding-top:0}.result-row span{color:#aebdd0}.result-row b{text-align:right}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}.btn{border:0;border-radius:11px;padding:11px 10px;font-weight:850;cursor:pointer}.btn.primary{background:#2f7af5;color:#fff}.btn.secondary{background:#263c59;color:#edf4ff;border:1px solid #425e81}.empty{border:1px dashed #cbd6e4;border-radius:16px;padding:22px 16px;text-align:center;background:#fbfdff;color:var(--muted);font-size:13px}.alert{margin-top:12px;border-radius:12px;padding:10px 11px;font-size:11.8px}.alert.warn{background:var(--warnbg);color:var(--warn)}.alert.good{background:var(--goodbg);color:var(--good)}.alert.bad{background:var(--badbg);color:var(--bad)}.matrix{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}.matrix h2{font-size:18px;margin:0 0 4px}.matrix>p{margin:0;color:var(--muted);font-size:12.5px}.table-wrap{overflow:auto;margin-top:12px;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:700px;font-size:12px}th,td{padding:9px 10px;text-align:left;border-bottom:1px solid #edf0f4;vertical-align:top}th{background:#f7f9fc;font-size:11.5px;color:#475467}tr:last-child td{border-bottom:0}td code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:850;color:var(--accent)}.source{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px 14px;font-size:12px;color:#526174;word-break:break-word}.source strong{color:var(--ink)}.footer{text-align:center;color:var(--muted);font-size:11.5px;padding:0 14px 34px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);background:#111827;color:#fff;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:800;opacity:0;pointer-events:none;transition:.18s;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}
+:root{
+  --bg:#f4f6f9;--card:#fff;--ink:#142033;--muted:#667085;--line:#d9e0e8;
+  --nav:#101827;--nav2:#1e293b;--accent:#1565d8;--accent2:#0d4fae;--soft:#edf5ff;
+  --good:#137a4f;--goodbg:#eaf8f1;--warn:#8a5b00;--warnbg:#fff7df;--bad:#b42318;--badbg:#fff0ee;
+  --shadow:0 10px 28px rgba(15,23,42,.07);--radius:16px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",Arial,sans-serif;line-height:1.5}
+a{color:var(--accent)}
+button,input{font:inherit}
+.wrap{max-width:1180px;margin:auto}
+.top{background:linear-gradient(135deg,var(--nav),#183458);color:#fff;padding:28px 18px 24px}
+.eyebrow{font-size:12px;font-weight:850;letter-spacing:.12em;color:#9bc3ff}
+.top h1{margin:5px 0 8px;font-size:clamp(28px,5vw,42px);line-height:1.12;letter-spacing:-.03em}
+.top p{margin:0;max-width:850px;color:#d5deea;font-size:14px}
+.notice-top{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:850;background:#213f66;border:1px solid #3b628f}
+.content{padding:18px 14px 44px}
+.structure{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:16px}
+.structure h2{font-size:18px;margin:0 0 5px}.structure p{margin:0;color:var(--muted);font-size:12.5px}
+.code-strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;align-items:center}
+.seg{border:1px solid var(--line);background:#fbfcfe;border-radius:9px;padding:7px 9px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:800}
+.seg small{display:block;font-family:inherit;font-size:9.5px;font-weight:600;color:var(--muted);margin-top:2px}
+.dash{color:#98a2b3;font-weight:900}
+.layout{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(340px,.7fr);gap:16px;align-items:start}
+@media(max-width:940px){.layout{grid-template-columns:1fr}.result{position:static!important}}
+.builder{display:flex;flex-direction:column;gap:13px}
+.group{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.group-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px}
+.num{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--soft);color:var(--accent);font-size:12px;font-weight:900}
+.group h2{font-size:17px;margin:0}.group .en{font-size:11.5px;color:var(--muted);font-weight:650;margin-left:5px}.group-note{font-size:12.5px;color:var(--muted);margin-top:2px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.options.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.options.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:640px){.options,.options.three,.options.four{grid-template-columns:1fr}}
+.option{position:relative}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.option label{display:block;height:100%;min-height:86px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px;cursor:pointer;transition:.14s}
+.option label:hover{border-color:#9bb8dc;background:#fcfdff}
+.option input:checked+label{border:2px solid var(--accent);padding:10px 11px;background:var(--soft)}
+.option input:disabled+label{opacity:.5;cursor:not-allowed;background:#f8fafc}
+.option-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.code{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:24px;padding:0 6px;border-radius:6px;background:#eef2f6;color:#334155;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:900}
+.option input:checked+label .code{background:var(--accent);color:#fff}
+.option strong{font-size:14px}.tag{display:inline-flex;border-radius:999px;padding:2px 6px;font-size:9.5px;font-weight:850}
+.tag.good{background:var(--goodbg);color:var(--good)}.tag.warn{background:var(--warnbg);color:var(--warn)}.tag.bad{background:var(--badbg);color:var(--bad)}
+.option small{display:block;color:var(--muted);font-size:11.8px;line-height:1.45;margin-top:5px}
+.fixed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media(max-width:720px){.fixed-grid{grid-template-columns:1fr}}
+.fixed{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fafcff}
+.fixed b{display:block;font-size:13px}.fixed span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
+.result{position:sticky;top:12px}
+.result-card{background:linear-gradient(150deg,#0c1424,#193354);color:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.result-label{font-size:10.5px;font-weight:850;letter-spacing:.1em;color:#a7b7ca;text-transform:uppercase}
+.result-model{font-size:30px;font-weight:900;line-height:1.1;margin:5px 0 2px}
+.result-sub{font-size:12.5px;color:#cbd7e7}
+.sku-box{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.16)}
+.sku{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:20px;font-weight:850;word-break:break-all;margin:5px 0}
+.sku-status{font-size:11.5px;color:#c7d4e4}
+.result-rows{display:grid;gap:7px;margin-top:14px}
+.result-row{display:flex;justify-content:space-between;gap:12px;border-top:1px dashed rgba(255,255,255,.16);padding-top:7px;font-size:12.5px}
+.result-row:first-child{border-top:0;padding-top:0}.result-row span{color:#aebdd0}.result-row b{text-align:right}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+.btn{border:0;border-radius:11px;padding:11px 10px;font-weight:850;cursor:pointer}.btn.primary{background:#2f7af5;color:#fff}.btn.secondary{background:#263c59;color:#edf4ff;border:1px solid #425e81}
+.empty{border:1px dashed #cbd6e4;border-radius:16px;padding:22px 16px;text-align:center;background:#fbfdff;color:var(--muted);font-size:13px}
+.alert{margin-top:12px;border-radius:12px;padding:10px 11px;font-size:11.8px}.alert.warn{background:var(--warnbg);color:var(--warn)}.alert.good{background:var(--goodbg);color:var(--good)}.alert.bad{background:var(--badbg);color:var(--bad)}
+.matrix{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.matrix h2{font-size:18px;margin:0 0 4px}.matrix>p{margin:0;color:var(--muted);font-size:12.5px}
+.table-wrap{overflow:auto;margin-top:12px;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;min-width:700px;font-size:12px}th,td{padding:9px 10px;text-align:left;border-bottom:1px solid #edf0f4;vertical-align:top}th{background:#f7f9fc;font-size:11.5px;color:#475467}tr:last-child td{border-bottom:0}td code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:850;color:var(--accent)}
+.group-note.red-note{color:#dc2626;font-weight:800}
+.source{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px 14px;font-size:12px;color:#526174;word-break:break-word}.source strong{color:var(--ink)}
+.footer{text-align:center;color:var(--muted);font-size:11.5px;padding:0 14px 34px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);background:#111827;color:#fff;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:800;opacity:0;pointer-events:none;transition:.18s;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><div class="eyebrow">ZEBRA MC9400 / MC9450</div><h1>規格選型參考</h1><p>依實際作業環境逐項選擇完整規格，右側會同步整理建議機型、配置與參考訂購料號。每個選項都保留代碼與用途說明，方便客戶與業務一起確認。</p><div class="notice-top"><span class="badge">僅供選型參考,非 Zebra 官方工具</span><span class="badge">正式訂購請由業務再次確認 SKU / 認證 / 供貨</span></div><div class="source-top">資料來源：ZEBRA <a href="https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html" target="_blank" rel="noopener">https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html</a></div></div></header>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">ZEBRA MC9400 / MC9450</div>
+    <h1>規格選型參考</h1>
+    <p>依實際作業環境逐項選擇完整規格，右側會同步整理建議機型、配置與參考訂購料號。每個選項都保留代碼與用途說明，方便客戶與業務一起確認。</p>
+    <div class="notice-top">
+      <span class="badge">僅供選型參考,非 Zebra 官方工具</span>
+      <span class="badge">正式訂購請由業務再次確認 SKU / 認證 / 供貨</span>
+    </div>
+  </div>
+</header>
+
 <main class="content wrap">
-<section class="structure"><h2>料號結構</h2><p>以下用常見 MC9400 A6 槍柄型架構示意；實際前綴會依 MC9400 / MC9450 與區域版本不同。</p><div class="code-strip" aria-label="料號結構"><span class="seg">MC9401<small>機型 / 通訊</small></span><span class="dash">-</span><span class="seg">0G1<small>MC9400 槍柄型固定段</small></span><span class="seg">M<small>掃描 / 相機</small></span><span class="seg">6<small>記憶體</small></span><span class="seg">D<small>鍵盤</small></span><span class="seg">S<small>環境</small></span><span class="seg">S<small>電池</small></span><span class="dash">-</span><span class="seg">A6<small>區域</small></span></div></section>
-<div class="layout"><section class="builder">
-<section class="group"><div class="group-head"><div class="num">1</div><div><h2>通訊與機型 <span class="en">Model / Connectivity</span></h2><div class="group-note">先依網路環境決定 MC9400 或 MC9450。</div></div></div><div class="options"><div class="option"><input id="m9400" type="radio" name="model" value="9400"><label for="m9400"><div class="option-top"><span class="code">MC9400</span><strong>Wi‑Fi 6E</strong><span class="tag good">一般廠區常用</span></div><small>適合倉庫、工廠等已有完整 Wi‑Fi 覆蓋的環境，不需要 SIM 行動網路。</small></label></div><div class="option"><input id="m9450" type="radio" name="model" value="9450"><label for="m9450"><div class="option-top"><span class="code">MC9450</span><strong>Wi‑Fi 6E + 5G</strong><span class="tag good">戶外 / 跨區</span></div><small>需要公共或私有 5G、nano SIM / eSIM 行動連線的港口、堆場、大型場域。</small></label></div></div></section>
-<section class="group"><div class="group-head"><div class="num">2</div><div><h2>外觀外型 <span class="en">Form Factor</span></h2><div class="group-note">MC94xx 目前已核對的常見訂購 SKU 為槍柄型。其他外型若有需求仍可先選，系統會提醒由業務確認。</div></div></div><div class="options three"><div class="option"><input id="ffG" type="radio" name="form" value="G"><label for="ffG"><div class="option-top"><span class="code">G</span><strong>槍柄手持型</strong><span class="tag good">已核對</span></div><small>Gun / Pistol Grip。扳機式高頻掃描操作，倉儲、製造、物流最常見。</small></label></div><div class="option"><input id="ffB" type="radio" name="form" value="B"><label for="ffB"><div class="option-top"><span class="code">B</span><strong>直立無槍柄</strong><span class="tag warn">需業務確認</span></div><small>Brick 需求。若客戶指定無槍柄外型，請由業務確認 MC94xx 當期是否有對應可訂 SKU 或改選其他系列。</small></label></div><div class="option"><input id="ffT" type="radio" name="form" value="T"><label for="ffT"><div class="option-top"><span class="code">T</span><strong>旋轉頭型</strong><span class="tag warn">需業務確認</span></div><small>Turret 需求。若需要可調掃描頭角度，請由業務確認 MC94xx 當期可訂配置或其他 Zebra 系列。</small></label></div></div></section>
-<section class="group"><div class="group-head"><div class="num">3</div><div><h2>掃描引擎與相機 <span class="en">Scan Engine / Camera</span></h2><div class="group-note">這一段直接影響掃描距離，以及是否包含前後相機。</div></div></div><div class="options four"><div class="option"><input id="scJ" type="radio" name="scan" value="J"><label for="scJ"><div class="option-top"><span class="code">J</span><strong>SE4770 標準距離</strong></div><small>一般近距離揀貨、箱標、棧板標籤與進出貨掃描；不含前後相機配置。</small></label></div><div class="option"><input id="scM" type="radio" name="scan" value="M"><label for="scM"><div class="option-top"><span class="code">M</span><strong>SE58 IntelliFocus 超遠距</strong><span class="tag good">高架倉推薦</span></div><small>遠近兼具，官方規格可涵蓋手邊條碼到超過 30.5 公尺，適合高層貨架與大型倉庫。</small></label></div><div class="option"><input id="scP" type="radio" name="scan" value="P"><label for="scP"><div class="option-top"><span class="code">P</span><strong>SE4770 + 前後相機</strong></div><small>標準距離掃描，加上前後鏡頭；適合貨損拍照、品質記錄、視訊與影像工作流程。</small></label></div><div class="option"><input id="scR" type="radio" name="scan" value="R"><label for="scR"><div class="option-top"><span class="code">R</span><strong>SE58 + 前後相機</strong><span class="tag good">功能最完整</span></div><small>超遠距離掃描 + 前後相機；適合高架倉、戶外大型場域，同時需要影像留存的作業。</small></label></div></div></section>
-<section class="group"><div class="group-head"><div class="num">4</div><div><h2>實體鍵盤 <span class="en">Keypad</span></h2><div class="group-note">MC9400 / MC9450 提供多種模組化鍵盤，可依資料輸入習慣與既有系統選擇，鍵盤可現場更換。</div></div></div><div class="options"><div class="option"><input id="keyA" type="radio" name="keypad" value="A"><label for="keyA"><div class="option-top"><span class="code">A</span><strong>29-Key Shifted Alpha</strong></div><small>精簡型鍵盤，適合需要較少按鍵、以數字和切換字母輸入為主的工作流程。</small></label></div><div class="option"><input id="keyB" type="radio" name="keypad" value="B"><label for="keyB"><div class="option-top"><span class="code">B</span><strong>34-Key Numeric</strong></div><small>數字 / 功能鍵為主，適合數量、料號、儲位等大量數字輸入。</small></label></div><div class="option"><input id="keyC" type="radio" name="keypad" value="C"><label for="keyC"><div class="option-top"><span class="code">C</span><strong>43-Key Shifted Alpha</strong></div><small>按鍵較大、操作直接，適合戴手套或需要更多實體功能鍵的現場。</small></label></div><div class="option"><input id="keyD" type="radio" name="keypad" value="D"><label for="keyD"><div class="option-top"><span class="code">D</span><strong>53-Key Standard</strong><span class="tag good">最通用</span></div><small>標準字母 / 數字 / 功能鍵配置，適合一般 Android WMS、ERP、倉儲應用。</small></label></div><div class="option"><input id="keyE" type="radio" name="keypad" value="E"><label for="keyE"><div class="option-top"><span class="code">E</span><strong>53-Key VT Emulator</strong></div><small>針對 VT / Telnet 類終端模擬與既有舊式系統操作流程。</small></label></div><div class="option"><input id="keyG" type="radio" name="keypad" value="G"><label for="keyG"><div class="option-top"><span class="code">G</span><strong>53-Key IBM 5250</strong><span class="tag good">AS/400</span></div><small>適合 IBM AS/400 / 5250 綠螢幕終端模擬系統。</small></label></div><div class="option"><input id="keyH" type="radio" name="keypad" value="H"><label for="keyH"><div class="option-top"><span class="code">H</span><strong>58-Key Alpha Numeric Function</strong></div><small>高密度完整鍵盤，適合大量英文字母、數字與特殊功能鍵組合輸入。</small></label></div><div class="option"><input id="keyQ" type="radio" name="keypad" value="?"><label for="keyQ"><div class="option-top"><span class="code">?</span><strong>不確定</strong><span class="tag warn">由業務確認</span></div><small>若不清楚既有系統需要哪種鍵盤，可先完成其他規格，再請業務依操作畫面確認。</small></label></div></div></section>
-<section class="group"><div class="group-head"><div class="num">5</div><div><h2>記憶體與作業系統 <span class="en">Memory / OS</span></h2><div class="group-note">目前此頁已核對的 MC94xx 常見配置為固定規格，不需要客戶額外選擇。</div></div></div><div class="fixed-grid"><div class="fixed"><b><span class="code">6</span> 6GB RAM / 128GB Flash</b><span>記憶體與內建儲存空間。</span></div><div class="fixed"><b>Android GMS</b><span>Android，含 Google Mobile Services；此頁不另做作業系統選項。</span></div><div class="fixed"><b>4.3 吋顯示器</b><span>工業環境設計，可搭配實體鍵盤操作。</span></div></div></section>
-<section class="group"><div class="group-head"><div class="num">6</div><div><h2>作業環境 <span class="en">Environmental Rating</span></h2><div class="group-note">請依現場溫度與安全規範選擇；特殊危險場域一定要由業務再次確認認證要求。</div></div></div><div class="options three"><div class="option"><input id="envS" type="radio" name="env" value="S"><label for="envS"><div class="option-top"><span class="code">S</span><strong>Standard 標準環境</strong><span class="tag good">一般使用</span></div><small>一般常溫倉庫、工廠、物流；MC94xx 具工業級防護設計。</small></label></div><div class="option"><input id="envC" type="radio" name="env" value="C"><label for="envC"><div class="option-top"><span class="code">C</span><strong>Cold Storage 冷凍庫版</strong></div><small>冷凍 / 低溫作業，含加熱觸控螢幕、掃描出射窗與冷凍額定電池等對應設計。</small></label></div><div class="option"><input id="envN" type="radio" name="env" value="N"><label for="envN"><div class="option-top"><span class="code">N</span><strong>Non-Incendive 特殊版本</strong><span class="tag warn">需確認認證</span></div><small>特殊危險環境需求。實際是否適用必須依客戶現場分區、氣體 / 粉塵與安全規範確認。</small></label></div></div></section>
-<section class="group" id="batteryGroup"><div class="group-head"><div class="num">7</div><div><h2>電池 <span class="en">Battery Type</span></h2><div class="group-note" id="batteryNote">一般標準環境可選標準電池或 BLE 尋物電池。</div></div></div><div class="options"><div class="option"><input id="batS" type="radio" name="battery" value="S"><label for="batS"><div class="option-top"><span class="code">S</span><strong id="batSTitle">7000 mAh 標準電池</strong></div><small id="batSDetail">一般高容量可更換式電池配置。</small></label></div><div class="option"><input id="batB" type="radio" name="battery" value="B"><label for="batB"><div class="option-top"><span class="code">B</span><strong>7000 mAh BLE 尋物電池</strong><span class="tag good">Device Tracker</span></div><small>支援 BLE 裝置追蹤情境，即使設備關機或電量不足仍可協助尋找設備。</small></label></div></div></section>
-<section class="group"><div class="group-head"><div class="num">8</div><div><h2>區域版本 <span class="en">Country / Region</span></h2><div class="group-note">此頁主要提供台灣客戶選型，A6 作為台灣詢價常用參考區域碼；實際認證與供貨仍以業務回覆為準。</div></div></div><div class="options"><div class="option"><input id="regA6" type="radio" name="region" value="A6"><label for="regA6"><div class="option-top"><span class="code">A6</span><strong>Rest of World / 台灣詢價參考</strong><span class="tag good">台灣常用</span></div><small>用於此頁參考料號產生。正式下單前仍需確認當期區域版、認證與可供貨料號。</small></label></div><div class="option"><input id="regQ" type="radio" name="region" value="?"><label for="regQ"><div class="option-top"><span class="code">?</span><strong>其他國家 / 區域</strong><span class="tag warn">由業務確認</span></div><small>若設備不是在台灣使用，請告知實際使用國家，讓業務確認對應區域與認證版本。</small></label></div></div></section>
-</section><aside class="result" id="result"></aside></div>
-<section class="matrix"><h2>完整編碼對照</h2><p>客戶不需要背代碼；此表方便業務與技術人員核對每一段代表的規格。</p><div class="table-wrap"><table><thead><tr><th>欄位</th><th>代碼</th><th>規格</th><th>用途 / 說明</th></tr></thead><tbody><tr><td>機型</td><td><code>MC9401</code></td><td>MC9400 / Wi‑Fi 6E</td><td>已有完整 Wi‑Fi 覆蓋的倉儲、製造環境。</td></tr><tr><td>機型</td><td><code>MC945B</code>（A6 常見前綴）</td><td>MC9450 / Wi‑Fi 6E + 5G</td><td>需要公共 / 私有 5G、SIM / eSIM、GNSS 的場域。</td></tr><tr><td>外觀</td><td><code>G</code></td><td>Gun / Pistol Grip</td><td>目前已核對 MC94xx A6 SKU 的常見槍柄型；B / T 需求請由業務確認。</td></tr><tr><td>掃描</td><td><code>J</code></td><td>SE4770</td><td>一般近距離掃描，不含相機。</td></tr><tr><td>掃描</td><td><code>M</code></td><td>SE58 IntelliFocus</td><td>超遠距離掃描，不含相機。</td></tr><tr><td>掃描</td><td><code>P</code></td><td>SE4770 + Cameras</td><td>標準掃描 + 前後相機。</td></tr><tr><td>掃描</td><td><code>R</code></td><td>SE58 + Cameras</td><td>超遠距離掃描 + 前後相機。</td></tr><tr><td>記憶體</td><td><code>6</code></td><td>6GB / 128GB</td><td>目前已核對常見配置。</td></tr><tr><td>鍵盤</td><td><code>A / B / C / D / E / G / H</code></td><td>29 / 34 / 43 / 53 / VT / 5250 / 58-Key</td><td>七種模組化實體鍵盤，可依系統與輸入習慣選擇。</td></tr><tr><td>環境</td><td><code>S / C / N</code></td><td>Standard / Cold Storage / Non-Incendive</td><td>依一般、低溫或特殊危險環境選擇。</td></tr><tr><td>電池</td><td><code>S / B</code></td><td>環境對應標準電池 / BLE 電池</td><td>BLE 電池主要用於一般環境 Device Tracker；Cold / NI 需使用環境對應電池。</td></tr><tr><td>區域</td><td><code>A6</code></td><td>Rest of World</td><td>台灣詢價常用參考；實際供貨請確認。</td></tr></tbody></table></div></section>
-<div class="source"><strong>僅供選型參考,非 Zebra 官方工具</strong><br>資料來源：ZEBRA<br><a href="https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html" target="_blank" rel="noopener">https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html</a></div>
-</main><div class="footer">僅供選型參考,非 Zebra 官方工具｜正式訂購前請由業務確認最新可供貨料號、規格與認證。</div><div class="toast" id="toast">已複製選型結果</div>
+  <section class="structure">
+    <h2>料號結構</h2>
+    <p>以下用常見 MC9400 A6 槍柄型架構示意；實際前綴會依 MC9400 / MC9450 與區域版本不同。</p>
+    <div class="code-strip" aria-label="料號結構">
+      <span class="seg">MC9401<small>機型 / 通訊</small></span><span class="dash">-</span>
+      <span class="seg">0G1<small>MC9400 槍柄型固定段</small></span>
+      <span class="seg">M<small>掃描 / 相機</small></span>
+      <span class="seg">6<small>記憶體</small></span>
+      <span class="seg">D<small>鍵盤</small></span>
+      <span class="seg">S<small>環境</small></span>
+      <span class="seg">S<small>電池</small></span><span class="dash">-</span>
+      <span class="seg">A6<small>區域</small></span>
+    </div>
+  </section>
+
+  <div class="layout">
+    <section class="builder">
+      <section class="group">
+        <div class="group-head"><div class="num">1</div><div><h2>通訊與機型 <span class="en">Model / Connectivity</span></h2><div class="group-note">先依網路環境決定 MC9400 或 MC9450。</div></div></div>
+        <div class="options">
+          <div class="option"><input id="m9400" type="radio" name="model" value="9400"><label for="m9400"><div class="option-top"><span class="code">MC9400</span><strong>Wi‑Fi 6E</strong><span class="tag good">一般廠區常用</span></div><small>適合倉庫、工廠等已有完整 Wi‑Fi 覆蓋的環境，不需要 SIM 行動網路。</small></label></div>
+          <div class="option"><input id="m9450" type="radio" name="model" value="9450"><label for="m9450"><div class="option-top"><span class="code">MC9450</span><strong>Wi‑Fi 6E + 5G</strong><span class="tag good">戶外 / 跨區</span></div><small>需要公共或私有 5G、nano SIM / eSIM 行動連線的港口、堆場、大型場域。</small></label></div>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="group-head"><div class="num">2</div><div><h2>外觀外型 <span class="en">Form Factor</span></h2><div class="group-note">MC94xx 目前已核對的常見訂購 SKU 為槍柄型。其他外型若有需求仍可先選，系統會提醒由業務確認。</div></div></div>
+        <div class="options three">
+          <div class="option"><input id="ffG" type="radio" name="form" value="G"><label for="ffG"><div class="option-top"><span class="code">G</span><strong>槍柄手持型</strong><span class="tag good">已核對</span></div><small>Gun / Pistol Grip。扳機式高頻掃描操作，倉儲、製造、物流最常見。</small></label></div>
+          <div class="option"><input id="ffB" type="radio" name="form" value="B"><label for="ffB"><div class="option-top"><span class="code">B</span><strong>直立無槍柄</strong><span class="tag warn">需業務確認</span></div><small>Brick 需求。若客戶指定無槍柄外型，請由業務確認 MC94xx 當期是否有對應可訂 SKU 或改選其他系列。</small></label></div>
+          <div class="option"><input id="ffT" type="radio" name="form" value="T"><label for="ffT"><div class="option-top"><span class="code">T</span><strong>旋轉頭型</strong><span class="tag warn">需業務確認</span></div><small>Turret 需求。若需要可調掃描頭角度，請由業務確認 MC94xx 當期可訂配置或其他 Zebra 系列。</small></label></div>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="group-head"><div class="num">3</div><div><h2>掃描引擎與相機 <span class="en">Scan Engine / Camera</span></h2><div class="group-note">這一段直接影響掃描距離，以及是否包含前後相機。</div></div></div>
+        <div class="options four">
+          <div class="option"><input id="scJ" type="radio" name="scan" value="J"><label for="scJ"><div class="option-top"><span class="code">J</span><strong>SE4770 標準距離</strong></div><small>一般近距離揀貨、箱標、棧板標籤與進出貨掃描；不含前後相機配置。</small></label></div>
+          <div class="option"><input id="scM" type="radio" name="scan" value="M"><label for="scM"><div class="option-top"><span class="code">M</span><strong>SE58 IntelliFocus 超遠距</strong><span class="tag good">高架倉推薦</span></div><small>遠近兼具，官方規格可涵蓋手邊條碼到超過 30.5 公尺，適合高層貨架與大型倉庫。</small></label></div>
+          <div class="option"><input id="scP" type="radio" name="scan" value="P"><label for="scP"><div class="option-top"><span class="code">P</span><strong>SE4770 + 前後相機</strong></div><small>標準距離掃描，加上前後鏡頭；適合貨損拍照、品質記錄、視訊與影像工作流程。</small></label></div>
+          <div class="option"><input id="scR" type="radio" name="scan" value="R"><label for="scR"><div class="option-top"><span class="code">R</span><strong>SE58 + 前後相機</strong><span class="tag good">功能最完整</span></div><small>超遠距離掃描 + 前後相機；適合高架倉、戶外大型場域，同時需要影像留存的作業。</small></label></div>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="group-head"><div class="num">4</div><div><h2>實體鍵盤 <span class="en">Keypad</span></h2><div class="group-note">MC9400 / MC9450 提供多種模組化鍵盤，可依資料輸入習慣與既有系統選擇，鍵盤可現場更換。</div></div></div>
+        <div class="options">
+          <div class="option"><input id="keyA" type="radio" name="keypad" value="A"><label for="keyA"><div class="option-top"><span class="code">A</span><strong>29-Key Shifted Alpha</strong></div><small>精簡型鍵盤，適合需要較少按鍵、以數字和切換字母輸入為主的工作流程。</small></label></div>
+          <div class="option"><input id="keyB" type="radio" name="keypad" value="B"><label for="keyB"><div class="option-top"><span class="code">B</span><strong>34-Key Numeric</strong></div><small>數字 / 功能鍵為主，適合數量、料號、儲位等大量數字輸入。</small></label></div>
+          <div class="option"><input id="keyC" type="radio" name="keypad" value="C"><label for="keyC"><div class="option-top"><span class="code">C</span><strong>43-Key Shifted Alpha</strong></div><small>按鍵較大、操作直接，適合戴手套或需要更多實體功能鍵的現場。</small></label></div>
+          <div class="option"><input id="keyD" type="radio" name="keypad" value="D"><label for="keyD"><div class="option-top"><span class="code">D</span><strong>53-Key Standard</strong><span class="tag good">最通用</span></div><small>標準字母 / 數字 / 功能鍵配置，適合一般 Android WMS、ERP、倉儲應用。</small></label></div>
+          <div class="option"><input id="keyE" type="radio" name="keypad" value="E"><label for="keyE"><div class="option-top"><span class="code">E</span><strong>53-Key VT Emulator</strong></div><small>針對 VT / Telnet 類終端模擬與既有舊式系統操作流程。</small></label></div>
+          <div class="option"><input id="keyG" type="radio" name="keypad" value="G"><label for="keyG"><div class="option-top"><span class="code">G</span><strong>53-Key IBM 5250</strong><span class="tag good">AS/400</span></div><small>適合 IBM AS/400 / 5250 綠螢幕終端模擬系統。</small></label></div>
+          <div class="option"><input id="keyH" type="radio" name="keypad" value="H"><label for="keyH"><div class="option-top"><span class="code">H</span><strong>58-Key Alpha Numeric Function</strong></div><small>高密度完整鍵盤，適合大量英文字母、數字與特殊功能鍵組合輸入。</small></label></div>
+          <div class="option"><input id="keyQ" type="radio" name="keypad" value="?"><label for="keyQ"><div class="option-top"><span class="code">?</span><strong>不確定</strong><span class="tag warn">由業務確認</span></div><small>若不清楚既有系統需要哪種鍵盤，可先完成其他規格，再請業務依操作畫面確認。</small></label></div>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="group-head"><div class="num">5</div><div><h2>記憶體與作業系統 <span class="en">Memory / OS</span></h2><div class="group-note red-note">目前此頁已核對的 MC94xx 常見配置為固定規格，不需要客戶額外選擇。</div></div></div>
+        <div class="fixed-grid">
+          <div class="fixed"><b><span class="code">6</span> 6GB RAM / 128GB Flash</b><span>記憶體與內建儲存空間。</span></div>
+          <div class="fixed"><b><span class="code">G</span> Android GMS</b><span>Android，含 Google Mobile Services。</span></div>
+          <div class="fixed"><b>4.3 吋顯示器</b><span>工業環境設計，可搭配實體鍵盤操作。</span></div>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="group-head"><div class="num">6</div><div><h2>作業環境 <span class="en">Environmental Rating</span></h2><div class="group-note">請依現場溫度與安全規範選擇；特殊危險場域一定要由業務再次確認認證要求。</div></div></div>
+        <div class="options three">
+          <div class="option"><input id="envS" type="radio" name="env" value="S"><label for="envS"><div class="option-top"><span class="code">S</span><strong>Standard 標準環境</strong><span class="tag good">一般使用</span></div><small>一般常溫倉庫、工廠、物流；MC94xx 具工業級防護設計。</small></label></div>
+          <div class="option"><input id="envC" type="radio" name="env" value="C"><label for="envC"><div class="option-top"><span class="code">C</span><strong>Cold Storage 冷凍庫版</strong></div><small>冷凍 / 低溫作業，含加熱觸控螢幕、掃描出射窗與冷凍額定電池等對應設計。</small></label></div>
+          <div class="option"><input id="envN" type="radio" name="env" value="N"><label for="envN"><div class="option-top"><span class="code">N</span><strong>Non-Incendive 特殊版本</strong><span class="tag warn">需確認認證</span></div><small>特殊危險環境需求。實際是否適用必須依客戶現場分區、氣體 / 粉塵與安全規範確認。</small></label></div>
+        </div>
+      </section>
+
+      <section class="group" id="batteryGroup">
+        <div class="group-head"><div class="num">7</div><div><h2>電池 <span class="en">Battery Type</span></h2><div class="group-note" id="batteryNote">一般標準環境可選標準電池或 BLE 尋物電池。</div></div></div>
+        <div class="options">
+          <div class="option"><input id="batS" type="radio" name="battery" value="S"><label for="batS"><div class="option-top"><span class="code">S</span><strong id="batSTitle">7000 mAh 標準電池</strong></div><small id="batSDetail">一般高容量可更換式電池配置。</small></label></div>
+          <div class="option"><input id="batB" type="radio" name="battery" value="B"><label for="batB"><div class="option-top"><span class="code">B</span><strong>7000 mAh BLE 尋物電池</strong><span class="tag good">Device Tracker</span></div><small>支援 BLE 裝置追蹤情境，即使設備關機或電量不足仍可協助尋找設備。</small></label></div>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="group-head"><div class="num">8</div><div><h2>區域版本 <span class="en">Country / Region</span></h2><div class="group-note">台灣可選 A6 參考區域；中國大陸可直接標示使用地區。實際認證、可供貨 SKU 與區域碼仍以業務確認為準。</div></div></div>
+        <div class="options">
+          <div class="option"><input id="regA6" type="radio" name="region" value="A6"><label for="regA6"><div class="option-top"><span class="code">A6</span><strong>Rest of World / 台灣詢價參考</strong><span class="tag good">台灣常用</span></div><small>用於此頁參考料號產生。正式下單前仍需確認當期區域版、認證與可供貨料號。</small></label></div>
+          <div class="option"><input id="regCN" type="radio" name="region" value="CN"><label for="regCN"><div class="option-top"><span class="code">CN</span><strong>中國大陸</strong><span class="tag good">中國地區</span></div><small>適用中國大陸使用情境；正式區域碼、CCC / 無線電認證與可供貨 SKU 請由業務確認。</small></label></div>
+          <div class="option"><input id="regQ" type="radio" name="region" value="?"><label for="regQ"><div class="option-top"><span class="code">?</span><strong>其他國家 / 區域</strong><span class="tag warn">由業務確認</span></div><small>若設備不是在台灣或中國大陸使用，請告知實際使用國家，讓業務確認對應區域與認證版本。</small></label></div>
+        </div>
+      </section>
+    </section>
+
+    <aside class="result" id="result"></aside>
+  </div>
+
+  <section class="matrix">
+    <h2>完整編碼對照</h2>
+    <p>客戶不需要背代碼；此表方便業務與技術人員核對每一段代表的規格。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>欄位</th><th>代碼</th><th>規格</th><th>用途 / 說明</th></tr></thead>
+        <tbody>
+          <tr><td>機型</td><td><code>MC9401</code></td><td>MC9400 / Wi‑Fi 6E</td><td>已有完整 Wi‑Fi 覆蓋的倉儲、製造環境。</td></tr>
+          <tr><td>機型</td><td><code>MC945B</code>（A6 常見前綴）</td><td>MC9450 / Wi‑Fi 6E + 5G</td><td>需要公共 / 私有 5G、SIM / eSIM、GNSS 的場域。</td></tr>
+          <tr><td>外觀</td><td><code>G</code></td><td>Gun / Pistol Grip</td><td>目前已核對 MC94xx A6 SKU 的常見槍柄型。</td></tr>
+          <tr><td>掃描</td><td><code>J</code></td><td>SE4770</td><td>一般近距離掃描，不含相機。</td></tr>
+          <tr><td>掃描</td><td><code>M</code></td><td>SE58 IntelliFocus</td><td>超遠距離掃描，不含相機。</td></tr>
+          <tr><td>掃描</td><td><code>P</code></td><td>SE4770 + Cameras</td><td>標準掃描 + 前後相機。</td></tr>
+          <tr><td>掃描</td><td><code>R</code></td><td>SE58 + Cameras</td><td>超遠距離掃描 + 前後相機。</td></tr>
+          <tr><td>記憶體</td><td><code>6</code></td><td>6GB / 128GB</td><td>目前已核對常見配置。</td></tr>
+          <tr><td>鍵盤</td><td><code>A / B / C / D / E / G / H</code></td><td>29 / 34 / 43 / 53 / VT / 5250 / 58-Key</td><td>七種模組化實體鍵盤，可依系統與輸入習慣選擇。</td></tr>
+          <tr><td>環境</td><td><code>S / C / N</code></td><td>Standard / Cold Storage / Non-Incendive</td><td>依一般、低溫或特殊危險環境選擇。</td></tr>
+          <tr><td>電池</td><td><code>S / B</code></td><td>環境對應標準電池 / BLE 電池</td><td>BLE 電池主要用於一般環境 Device Tracker；Cold / NI 需使用環境對應電池。</td></tr>
+          <tr><td>區域</td><td><code>A6</code></td><td>Rest of World</td><td>台灣詢價常用參考；實際供貨請確認。</td></tr>
+          <tr><td>區域</td><td><code>CN</code></td><td>中國大陸</td><td>中國大陸使用情境；正式區域碼、認證與可供貨 SKU 請由業務確認。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="source">
+    <strong>僅供選型參考,非 Zebra 官方工具</strong><br>
+    資料來源：ZEBRA<br>
+    <a href="https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html" target="_blank" rel="noopener">https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html</a>
+  </div>
+</main>
+
+<div class="footer">僅供選型參考,非 Zebra 官方工具｜正式訂購前請由業務確認最新可供貨料號、規格與認證。</div>
+<div class="toast" id="toast">已複製選型結果</div>
+
 <script>
-(()=>{'use strict';const $=s=>document.querySelector(s);const val=n=>document.querySelector(`input[name="${n}"]:checked`)?.value||'';const scanMap={J:{name:'SE4770 標準距離',camera:'不含前後相機'},M:{name:'SE58 IntelliFocus 超遠距',camera:'不含前後相機'},P:{name:'SE4770 + 前後相機',camera:'含前後相機'},R:{name:'SE58 + 前後相機',camera:'含前後相機'}};const keypadMap={A:'29-Key Shifted Alpha',B:'34-Key Numeric',C:'43-Key Shifted Alpha',D:'53-Key Standard',E:'53-Key VT Emulator',G:'53-Key IBM 5250 Emulator',H:'58-Key Alpha Numeric Function','?':'由業務協助確認'};const envMap={S:'Standard 標準環境',C:'Cold Storage 冷凍庫版',N:'Non-Incendive 特殊版本'};const batteryMap={S:'7000 mAh 標準電池',B:'7000 mAh BLE 尋物電池'};const KNOWN_A6=new Set(['MC9401-0G1J6BSS-A6','MC9401-0G1J6CSS-A6','MC9401-0G1J6DSS-A6','MC9401-0G1J6ESS-A6','MC9401-0G1J6GSS-A6','MC9401-0G1J6HSS-A6','MC9401-0G1M6ASS-A6','MC9401-0G1M6BSS-A6','MC9401-0G1M6CSB-A6','MC9401-0G1M6CSS-A6','MC9401-0G1M6DSB-A6','MC9401-0G1M6DSS-A6','MC9401-0G1M6ESS-A6','MC9401-0G1M6GSS-A6','MC9401-0G1M6HSS-A6','MC9401-0G1P6DSB-A6','MC9401-0G1P6DSS-A6','MC9401-0G1P6GSS-A6','MC9401-0G1R6ASS-A6','MC9401-0G1R6BSS-A6','MC9401-0G1R6CSS-A6','MC9401-0G1R6DSS-A6','MC9401-0G1R6ESS-A6','MC9401-0G1R6GSS-A6','MC9401-0G1R6HSS-A6','MC9401-0G1J6DCS-A6','MC9401-0G1M6BCS-A6','MC9401-0G1M6CCS-A6','MC9401-0G1M6DCS-A6','MC9401-0G1M6DNS-A6','MC945B-3G1J6BSS-A6','MC945B-3G1J6CSS-A6','MC945B-3G1J6DSS-A6','MC945B-3G1J6ESS-A6','MC945B-3G1J6GSS-A6','MC945B-3G1J6HSS-A6','MC945B-3G1M6ASS-A6','MC945B-3G1M6BSS-A6','MC945B-3G1M6CSB-A6','MC945B-3G1M6CSS-A6','MC945B-3G1M6DSB-A6','MC945B-3G1M6DSS-A6','MC945B-3G1M6ESS-A6','MC945B-3G1M6GSS-A6','MC945B-3G1M6HSS-A6','MC945B-3G1P6DSB-A6','MC945B-3G1P6DSS-A6','MC945B-3G1P6GSS-A6','MC945B-3G1R6ASS-A6','MC945B-3G1R6BSS-A6','MC945B-3G1R6CSS-A6','MC945B-3G1R6DSS-A6','MC945B-3G1R6GSS-A6','MC945B-3G1R6HSS-A6']);
-function current(){const model=val('model'),form=val('form'),scan=val('scan'),keypad=val('keypad'),env=val('env'),region=val('region');let battery=val('battery');if(env==='C'||env==='N')battery='S';const prefix=model==='9400'?'MC9401-0G1':model==='9450'?'MC945B-3G1':'';const eligibleForSku=form==='G'&&region==='A6'&&keypad&&keypad!=='?'&&env&&scan&&battery&&prefix;const sku=eligibleForSku?`${prefix}${scan}6${keypad}${env}${battery}-A6`:'';return{model,form,scan,keypad,env,region,battery,prefix,sku}}
-function syncBattery(){const env=val('env'),b=$('#batB'),s=$('#batS'),title=$('#batSTitle'),detail=$('#batSDetail'),note=$('#batteryNote');if(env==='C'){b.disabled=true;b.checked=false;s.disabled=false;s.checked=true;title.textContent='5000 mAh 冷凍環境電池';detail.textContent='Cold Storage 專用冷凍額定電池；料號中的電池代碼仍使用 S。';note.textContent='選擇 Cold Storage 後，電池自動切換為冷凍環境對應電池。'}else if(env==='N'){b.disabled=true;b.checked=false;s.disabled=false;s.checked=true;title.textContent='Non-Incendive 對應電池';detail.textContent='特殊環境需使用相符認證電池；料號中的電池代碼使用 S。';note.textContent='選擇 Non-Incendive 後，電池自動切換為環境對應版本，正式訂購需再確認認證。'}else{b.disabled=false;s.disabled=false;title.textContent='7000 mAh 標準電池';detail.textContent='一般高容量可更換式電池配置。';note.textContent='一般標準環境可選標準電池或 BLE 尋物電池。'}}
-function batteryText(c){if(c.env==='C')return'5000 mAh 冷凍環境電池（代碼 S）';if(c.env==='N')return'Non-Incendive 對應電池（代碼 S）';return batteryMap[c.battery]||'尚未選擇'}
-function render(){syncBattery();const c=current(),r=$('#result'),required=c.model&&c.form&&c.scan&&c.keypad&&c.env&&c.region&&c.battery;if(!required){r.innerHTML='<div class="empty"><b>請完成左側選型。</b><br><br>沒有預設答案；每選一項，這裡就會同步整理結果。</div>';return}const modelName=c.model==='9450'?'MC9450':'MC9400',modelDetail=c.model==='9450'?'Wi‑Fi 6E + 5G 行動網路':'Wi‑Fi 6E';let skuBlock='',alert='';if(c.form!=='G'){skuBlock='<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku-status">目前此頁未將 B / T 外型直接組成 MC94xx 訂購料號，請由業務確認當期可訂 SKU 或其他適合系列。</div></div>';alert='<div class="alert warn">您選擇的外型不是目前已核對的 MC94xx 槍柄型 SKU，建議由業務進一步確認。</div>'}else if(c.region!=='A6'){skuBlock='<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku-status">使用國家 / 區域尚待確認，因此不產生完整料號。</div></div>'}else if(c.keypad==='?'){skuBlock='<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku-status">鍵盤尚待確認，因此先保留其他選型結果，不產生完整料號。</div></div>'}else if(c.sku){const known=KNOWN_A6.has(c.sku);skuBlock=`<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku">${c.sku}</div><div class="sku-status">${known?'此 SKU 已在目前整理的 Zebra A6 公開料號資料中找到；正式下單仍需再次確認。':'依目前編碼規則組出的參考料號；尚未在此頁的已核對清單中找到，請業務確認供貨。'}</div></div>`;alert=`<div class="alert ${known?'good':'warn'}">${known?'目前選型組合已有公開 A6 SKU 可對照。':'此組合可以作為需求規格，但正式 SKU 請先由業務確認。'}</div>`}r.innerHTML=`<div class="result-card"><div class="result-label">選型結果</div><div class="result-model">${modelName}</div><div class="result-sub">${modelDetail}</div>${skuBlock}<div class="result-rows"><div class="result-row"><span>外型</span><b>${c.form==='G'?'G｜槍柄手持型':c.form==='B'?'B｜直立無槍柄（需確認）':'T｜旋轉頭型（需確認）'}</b></div><div class="result-row"><span>掃描 / 相機</span><b>${c.scan}｜${scanMap[c.scan].name}</b></div><div class="result-row"><span>記憶體</span><b>6｜6GB / 128GB</b></div><div class="result-row"><span>鍵盤</span><b>${c.keypad}｜${keypadMap[c.keypad]}</b></div><div class="result-row"><span>作業系統</span><b>Android GMS</b></div><div class="result-row"><span>環境</span><b>${c.env}｜${envMap[c.env]}</b></div><div class="result-row"><span>電池</span><b>${batteryText(c)}</b></div><div class="result-row"><span>區域</span><b>${c.region==='A6'?'A6｜台灣詢價參考':'待業務確認'}</b></div></div>${alert}<div class="actions"><button class="btn primary" id="copyBtn" type="button">複製選型結果</button><button class="btn secondary" id="clearBtn" type="button">全部清除</button></div></div><div class="alert warn"><b>僅供選型參考,非 Zebra 官方工具</b><br>正式訂購請由業務確認最新 SKU、認證與供貨。</div>`;$('#copyBtn').onclick=copyResult;$('#clearBtn').onclick=clearAll}
-function resultText(){const c=current();if(!(c.model&&c.form&&c.scan&&c.keypad&&c.env&&c.region&&c.battery))return'';return[`Zebra ${c.model==='9450'?'MC9450':'MC9400'} 選型需求`,`外型：${c.form}`,`掃描 / 相機：${c.scan}｜${scanMap[c.scan].name}`,'記憶體：6｜6GB RAM / 128GB Flash',`鍵盤：${c.keypad}｜${keypadMap[c.keypad]}`,'作業系統：Android GMS',`環境：${c.env}｜${envMap[c.env]}`,`電池：${batteryText(c)}`,`區域：${c.region==='A6'?'A6｜台灣詢價參考':'待業務確認'}`,`參考訂購料號：${c.sku||'待業務確認'}`,'','僅供選型參考,非 Zebra 官方工具','資料來源：ZEBRA https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html'].join('\n')}
-async function copyResult(){const t=resultText();if(!t)return;try{await navigator.clipboard.writeText(t)}catch(e){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}const toast=$('#toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1400)}function clearAll(){document.querySelectorAll('input[type=radio]').forEach(x=>{x.checked=false;x.disabled=false});render();window.scrollTo({top:0,behavior:'smooth'})}document.addEventListener('change',e=>{if(e.target.matches('input[type=radio]'))render()});render()})();
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const val = n => document.querySelector(`input[name="${n}"]:checked`)?.value || '';
+
+const scanMap = {
+  J:{name:'SE4770 標準距離',camera:'不含前後相機'},
+  M:{name:'SE58 IntelliFocus 超遠距',camera:'不含前後相機'},
+  P:{name:'SE4770 + 前後相機',camera:'含前後相機'},
+  R:{name:'SE58 + 前後相機',camera:'含前後相機'}
+};
+const keypadMap = {
+  A:'29-Key Shifted Alpha', B:'34-Key Numeric', C:'43-Key Shifted Alpha',
+  D:'53-Key Standard', E:'53-Key VT Emulator', G:'53-Key IBM 5250 Emulator',
+  H:'58-Key Alpha Numeric Function', '?':'由業務協助確認'
+};
+const envMap = {S:'Standard 標準環境',C:'Cold Storage 冷凍庫版',N:'Non-Incendive 特殊版本'};
+const batteryMap = {S:'7000 mAh 標準電池',B:'7000 mAh BLE 尋物電池'};
+
+const KNOWN_A6 = new Set([
+'MC9401-0G1J6BSS-A6','MC9401-0G1J6CSS-A6','MC9401-0G1J6DSS-A6','MC9401-0G1J6ESS-A6','MC9401-0G1J6GSS-A6','MC9401-0G1J6HSS-A6',
+'MC9401-0G1M6ASS-A6','MC9401-0G1M6BSS-A6','MC9401-0G1M6CSB-A6','MC9401-0G1M6CSS-A6','MC9401-0G1M6DSB-A6','MC9401-0G1M6DSS-A6','MC9401-0G1M6ESS-A6','MC9401-0G1M6GSS-A6','MC9401-0G1M6HSS-A6',
+'MC9401-0G1P6DSB-A6','MC9401-0G1P6DSS-A6','MC9401-0G1P6GSS-A6',
+'MC9401-0G1R6ASS-A6','MC9401-0G1R6BSS-A6','MC9401-0G1R6CSS-A6','MC9401-0G1R6DSS-A6','MC9401-0G1R6ESS-A6','MC9401-0G1R6GSS-A6','MC9401-0G1R6HSS-A6',
+'MC9401-0G1J6DCS-A6','MC9401-0G1M6BCS-A6','MC9401-0G1M6CCS-A6','MC9401-0G1M6DCS-A6','MC9401-0G1M6DNS-A6',
+'MC945B-3G1J6BSS-A6','MC945B-3G1J6CSS-A6','MC945B-3G1J6DSS-A6','MC945B-3G1J6ESS-A6','MC945B-3G1J6GSS-A6','MC945B-3G1J6HSS-A6',
+'MC945B-3G1M6ASS-A6','MC945B-3G1M6BSS-A6','MC945B-3G1M6CSB-A6','MC945B-3G1M6CSS-A6','MC945B-3G1M6DSB-A6','MC945B-3G1M6DSS-A6','MC945B-3G1M6ESS-A6','MC945B-3G1M6GSS-A6','MC945B-3G1M6HSS-A6',
+'MC945B-3G1P6DSB-A6','MC945B-3G1P6DSS-A6','MC945B-3G1P6GSS-A6',
+'MC945B-3G1R6ASS-A6','MC945B-3G1R6BSS-A6','MC945B-3G1R6CSS-A6','MC945B-3G1R6DSS-A6','MC945B-3G1R6GSS-A6','MC945B-3G1R6HSS-A6'
+]);
+
+function current(){
+  const model=val('model'), form=val('form'), scan=val('scan'), keypad=val('keypad'), env=val('env'), region=val('region');
+  let battery=val('battery');
+  if(env==='C'||env==='N') battery='S';
+  const prefix=model==='9400'?'MC9401-0G1':model==='9450'?'MC945B-3G1':'';
+  const eligibleForSku=form==='G' && region==='A6' && keypad && keypad!=='?' && env && scan && battery && prefix;
+  const sku=eligibleForSku?`${prefix}${scan}6${keypad}${env}${battery}-A6`:'';
+  return {model,form,scan,keypad,env,region,battery,prefix,sku};
+}
+
+function syncBattery(){
+  const env=val('env');
+  const b=$('#batB');
+  const s=$('#batS');
+  const title=$('#batSTitle');
+  const detail=$('#batSDetail');
+  const note=$('#batteryNote');
+  if(env==='C'){
+    b.disabled=true;b.checked=false;s.disabled=false;s.checked=true;
+    title.textContent='5000 mAh 冷凍環境電池';
+    detail.textContent='Cold Storage 專用冷凍額定電池；料號中的電池代碼仍使用 S。';
+    note.textContent='選擇 Cold Storage 後，電池自動切換為冷凍環境對應電池。';
+  }else if(env==='N'){
+    b.disabled=true;b.checked=false;s.disabled=false;s.checked=true;
+    title.textContent='Non-Incendive 對應電池';
+    detail.textContent='特殊環境需使用相符認證電池；料號中的電池代碼使用 S。';
+    note.textContent='選擇 Non-Incendive 後，電池自動切換為環境對應版本，正式訂購需再確認認證。';
+  }else{
+    b.disabled=false;s.disabled=false;
+    title.textContent='7000 mAh 標準電池';
+    detail.textContent='一般高容量可更換式電池配置。';
+    note.textContent='一般標準環境可選標準電池或 BLE 尋物電池。';
+  }
+}
+
+function batteryText(c){
+  if(c.env==='C') return '5000 mAh 冷凍環境電池（代碼 S）';
+  if(c.env==='N') return 'Non-Incendive 對應電池（代碼 S）';
+  return batteryMap[c.battery] || '尚未選擇';
+}
+
+function render(){
+  syncBattery();
+  const c=current();
+  const r=$('#result');
+  const required = c.model && c.form && c.scan && c.keypad && c.env && c.region && c.battery;
+  if(!required){
+    r.innerHTML='<div class="empty"><b>請完成左側選型。</b><br><br>沒有預設答案；每選一項，這裡就會同步整理結果。</div>';
+    return;
+  }
+  const modelName=c.model==='9450'?'MC9450':'MC9400';
+  const modelDetail=c.model==='9450'?'Wi‑Fi 6E + 5G 行動網路':'Wi‑Fi 6E';
+  let skuBlock='';
+  let alert='';
+  if(c.form!=='G'){
+    skuBlock='<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku-status">目前此頁未將 B / T 外型直接組成 MC94xx 訂購料號，請由業務確認當期可訂 SKU 或其他適合系列。</div></div>';
+    alert='<div class="alert warn">您選擇的外型不是目前已核對的 MC94xx 槍柄型 SKU，建議由業務進一步確認。</div>';
+  }else if(c.region!=='A6'){
+    const regionMsg=c.region==='CN'?'已選中國大陸；正式區域碼、認證與可供貨 SKU 請由業務確認，因此此頁不直接產生完整料號。':'使用國家 / 區域尚待確認，因此不產生完整料號。';
+    skuBlock=`<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku-status">${regionMsg}</div></div>`;
+  }else if(c.keypad==='?'){
+    skuBlock='<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku-status">鍵盤尚待確認，因此先保留其他選型結果，不產生完整料號。</div></div>';
+  }else if(c.sku){
+    const known=KNOWN_A6.has(c.sku);
+    skuBlock=`<div class="sku-box"><div class="result-label">參考訂購料號</div><div class="sku">${c.sku}</div><div class="sku-status">${known?'此 SKU 已在目前整理的 Zebra A6 公開料號資料中找到；正式下單仍需再次確認。':'依目前編碼規則組出的參考料號；尚未在此頁的已核對清單中找到，請業務確認供貨。'}</div></div>`;
+    alert=`<div class="alert ${known?'good':'warn'}">${known?'目前選型組合已有公開 A6 SKU 可對照。':'此組合可以作為需求規格，但正式 SKU 請先由業務確認。'}</div>`;
+  }
+  r.innerHTML=`<div class="result-card">
+    <div class="result-label">選型結果</div>
+    <div class="result-model">${modelName}</div>
+    <div class="result-sub">${modelDetail}</div>
+    ${skuBlock}
+    <div class="result-rows">
+      <div class="result-row"><span>外型</span><b>${c.form==='G'?'G｜槍柄手持型':c.form==='B'?'B｜直立無槍柄（需確認）':'T｜旋轉頭型（需確認）'}</b></div>
+      <div class="result-row"><span>掃描 / 相機</span><b>${c.scan}｜${scanMap[c.scan].name}</b></div>
+      <div class="result-row"><span>記憶體</span><b>6｜6GB / 128GB</b></div>
+      <div class="result-row"><span>鍵盤</span><b>${c.keypad}｜${keypadMap[c.keypad]}</b></div>
+      <div class="result-row"><span>作業系統</span><b>G｜Android GMS</b></div>
+      <div class="result-row"><span>環境</span><b>${c.env}｜${envMap[c.env]}</b></div>
+      <div class="result-row"><span>電池</span><b>${batteryText(c)}</b></div>
+      <div class="result-row"><span>區域</span><b>${c.region==='A6'?'A6｜台灣詢價參考':c.region==='CN'?'CN｜中國大陸（正式 SKU 由業務確認）':'待業務確認'}</b></div>
+    </div>
+    ${alert}
+    <div class="actions"><button class="btn primary" id="copyBtn" type="button">複製選型結果</button><button class="btn secondary" id="clearBtn" type="button">全部清除</button></div>
+  </div>
+  <div class="alert warn"><b>僅供選型參考,非 Zebra 官方工具</b><br>正式訂購請由業務確認最新 SKU、認證與供貨。</div>`;
+  $('#copyBtn').onclick=copyResult;
+  $('#clearBtn').onclick=clearAll;
+}
+
+function resultText(){
+  const c=current();
+  if(!(c.model&&c.form&&c.scan&&c.keypad&&c.env&&c.region&&c.battery)) return '';
+  return [
+    `Zebra ${c.model==='9450'?'MC9450':'MC9400'} 選型需求`,
+    `外型：${c.form}`,
+    `掃描 / 相機：${c.scan}｜${scanMap[c.scan].name}`,
+    '記憶體：6｜6GB RAM / 128GB Flash',
+    `鍵盤：${c.keypad}｜${keypadMap[c.keypad]}`,
+    '作業系統：G｜Android GMS',
+    `環境：${c.env}｜${envMap[c.env]}`,
+    `電池：${batteryText(c)}`,
+    `區域：${c.region==='A6'?'A6｜台灣詢價參考':c.region==='CN'?'CN｜中國大陸（正式 SKU 由業務確認）':'待業務確認'}`,
+    `參考訂購料號：${c.sku||'待業務確認'}`,
+    '',
+    '僅供選型參考,非 Zebra 官方工具',
+    '資料來源：ZEBRA https://www.zebra.com/cn/zh/products/spec-sheets/mobile-computers/handheld/mc9400-mc9450.html'
+  ].join('\n');
+}
+
+async function copyResult(){
+  const t=resultText();if(!t)return;
+  try{await navigator.clipboard.writeText(t)}catch(e){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}
+  const toast=$('#toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1400);
+}
+function clearAll(){document.querySelectorAll('input[type=radio]').forEach(x=>{x.checked=false;x.disabled=false});render();window.scrollTo({top:0,behavior:'smooth'});}
+
+document.addEventListener('change',e=>{if(e.target.matches('input[type=radio]'))render();});
+render();
+})();
 </script>
-</body></html>
+</body>
+</html>
