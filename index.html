@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1220">
-<title>MC94xx 選型助手</title>
+<title>Zebra MC9400 / MC9450 料號規則</title>
 <style>
 :root{--bg:#f4f7fb;--card:#fff;--ink:#132033;--muted:#64748b;--line:#dbe3ee;--nav:#0b1220;--blue:#1463ff;--green:#137a4f;--greenbg:#eaf8f1;--amber:#9a6400;--amberbg:#fff7df;--red:#b42318;--redbg:#fff0ee;--soft:#eef4ff;--shadow:0 12px 30px rgba(15,23,42,.08);--radius:18px}
 *{box-sizing:border-box}
@@ -97,10 +97,10 @@ input::placeholder{color:#9aa7b8}
   <div class="wrap brand">
     <div>
       <div class="eyebrow">Zebra MC9400 / MC9450</div>
-      <h1>MC94xx 選型助手</h1>
-      <p>從客戶需求反推規格、建立訂購料號、解碼既有料號，並整合 Zebra 官方規格、環境版本、電池、鍵盤與常用配件資料。</p>
+      <h1>Zebra MC9400 / MC9450 料號規則說明</h1>
+      <p>說明 Zebra MC9400 / MC9450 訂購料號的組成方式與各代碼代表的規格，並提供料號解碼、規格對應及相關產品資料查詢。</p>
     </div>
-    <div class="badge">工程／業務工具</div>
+    <div class="badge">料號規則說明</div>
   </div>
 </header>
 
@@ -317,6 +317,7 @@ function resultHTML(s){
 function choice(name,value,title,small,checked){
   return `<div class="choice"><input type="radio" name="${name}" id="${name}_${value}" value="${value}" ${checked?'checked':''}><label for="${name}_${value}"><strong>${title}</strong><small>${small}</small></label></div>`;
 }
+function selectPlaceholder(label='請選擇'){return `<option value="" disabled selected>${label}</option>`;}
 
 function recFormHTML(s){
   const x=normalize(s);
